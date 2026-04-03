@@ -119,27 +119,44 @@ console.log(camelize(testString3));
 
 /////////////////////////////////
 
-function unique(arr) {
-  let newArr = [];
-  for (let i = 0; i <= arr.length - 1; i++) {
-    if (!newArr.includes(arr[i])) {
-      let value = arr[i];
-      newArr.push(value);
-    }
-  }
-  return newArr;
+// function unique(arr) {
+//   let newArr = [];
+//   for (let i = 0; i <= arr.length - 1; i++) {
+//     if (!newArr.includes(arr[i])) {
+//       let value = arr[i];
+//       newArr.push(value);
+//     }
+//   }
+//   return newArr;
+// }
+
+// let strings = [
+//   "Hare",
+//   "Krishna",
+//   "Hare",
+//   "Krishna",
+//   "Krishna",
+//   "Krishna",
+//   "Hare",
+//   "Hare",
+//   ":-O",
+// ];
+
+// alert(unique(strings)); // Hare, Krishna, :-O
+
+/////////////////////////////////
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [john, pete, mary];
+
+let names = getName(users);
+
+alert(names); // John, Pete, Mary
+
+function getName(users) {
+  const result = users.map((user) => user.name);
+  return result;
 }
-
-let strings = [
-  "Hare",
-  "Krishna",
-  "Hare",
-  "Krishna",
-  "Krishna",
-  "Krishna",
-  "Hare",
-  "Hare",
-  ":-O",
-];
-
-alert(unique(strings)); // Hare, Krishna, :-O
