@@ -163,14 +163,32 @@ console.log(camelize(testString3));
 
 /////////////////////////////////
 
-let john = { name: "John", surname: "Smith", id: 1 };
-let pete = { name: "Pete", surname: "Hunt", id: 2 };
-let mary = { name: "Mary", surname: "Key", id: 3 };
+// let john = { name: "John", surname: "Smith", id: 1 };
+// let pete = { name: "Pete", surname: "Hunt", id: 2 };
+// let mary = { name: "Mary", surname: "Key", id: 3 };
 
-let users = [john, pete, mary];
+// let users = [john, pete, mary];
 
-let usersMapped = users.map((users) => ({
-  fullName: users.name + " " + users.surname,
-  id: users.id,
-}));
-console.log(usersMapped);
+// let usersMapped = users.map((users) => ({
+//   fullName: users.name + " " + users.surname,
+//   id: users.id,
+// }));
+// console.log(usersMapped);
+
+/////////////////////////////////
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let arr = [pete, john, mary];
+
+sortByAge(arr);
+
+// now: [john, mary, pete]
+alert(arr[0].name); // John
+alert(arr[1].name); // Mary
+alert(arr[2].name); // Pete
+
+function sortByAge(users) {
+  return users.sort();
+}
