@@ -190,5 +190,5 @@ alert(arr[1].name); // Mary
 alert(arr[2].name); // Pete
 
 function sortByAge(users) {
-  return users.sort();
+  users.sort((a, b) => a.age - b.age);
 }
