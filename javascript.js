@@ -176,19 +176,32 @@ console.log(camelize(testString3));
 // console.log(usersMapped);
 
 /////////////////////////////////
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 28 };
+
+// let arr = [pete, john, mary];
+
+// sortByAge(arr);
+
+// // now: [john, mary, pete]
+// alert(arr[0].name); // John
+// alert(arr[1].name); // Mary
+// alert(arr[2].name); // Pete
+
+// function sortByAge(users) {
+//   users.sort((a, b) => a.age - b.age);
+// }
+
+///////////////////////////////// Avg age
 let john = { name: "John", age: 25 };
 let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 28 };
+let mary = { name: "Mary", age: 29 };
 
-let arr = [pete, john, mary];
+let arr = [john, pete, mary];
 
-sortByAge(arr);
+alert(getAverageAge(arr)); // (25 + 30 + 29) / 3 = 28
 
-// now: [john, mary, pete]
-alert(arr[0].name); // John
-alert(arr[1].name); // Mary
-alert(arr[2].name); // Pete
-
-function sortByAge(users) {
-  users.sort((a, b) => a.age - b.age);
+function getAverageAge(users) {
+  return users.reduce((prev, user) => prev + user.age, 0) / users.length;
 }
