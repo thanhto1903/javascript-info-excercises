@@ -194,14 +194,44 @@ console.log(camelize(testString3));
 // }
 
 ///////////////////////////////// Avg age
-let john = { name: "John", age: 25 };
-let pete = { name: "Pete", age: 30 };
-let mary = { name: "Mary", age: 29 };
+// let john = { name: "John", age: 25 };
+// let pete = { name: "Pete", age: 30 };
+// let mary = { name: "Mary", age: 29 };
 
-let arr = [john, pete, mary];
+// let arr = [john, pete, mary];
 
-alert(getAverageAge(arr)); // (25 + 30 + 29) / 3 = 28
+// alert(getAverageAge(arr)); // (25 + 30 + 29) / 3 = 28
 
-function getAverageAge(users) {
-  return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+// function getAverageAge(users) {
+//   return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+// }
+
+///////////////////////////////// Created keyed obj from arr
+let users = [
+  { id: "john", name: "John Smith", age: 20 },
+  { id: "ann", name: "Ann Smith", age: 24 },
+  { id: "pete", name: "Pete Peterson", age: 31 },
+];
+
+let usersById = groupById(users);
+console.log(usersById);
+
+function groupById(arr) {
+  let obj = {};
+  for (let i = 0; i < arr.length; i++) {
+    let key = arr[i].id;
+    obj[key] = arr[i];
+  }
+  return obj;
 }
+//How to create obj
+//Way to assign
+//Extract name
+//Set it as key
+// Set existing obj in array as a new value in an object
+
+//1: Lap qua cac item trong array
+//2: Lay value id lam ten/key
+//3: lay obj trong array bang arr[i] de lam value
+//Su dung gan bang ngoac vuong obj[key] = value
+//Su dung reduce voi callback
